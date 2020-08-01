@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">JMS Extender Stock-List Demo</string>
+
+    <!-- the 10.0.2.2 IP represents the IP of the machine that hosts the emulator -->
+    <string name="host">http://10.0.2.2:8080</string>
+
+    <!-- The name of the JMS connector -->
+    <string name="connector">ActiveMQ</string>
+    <string name="topicName">stocksTopic</string>
+
+    <!-- RSS orange color -->
+    <color name="RSS">#FF7400</color>
+
+    <!-- RSS orange color -->
+    <color name="TECHCCRUNC_GREEN">#008C00</color>
+
+    <!-- RSS orange color -->
+    <color name="ROLLYO_RED">#CC0000</color>
+    
+</resources>

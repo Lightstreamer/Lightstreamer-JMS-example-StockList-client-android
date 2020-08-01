@@ -1,0 +1,44 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion rootProject.targetSdkVersion
+
+    defaultConfig {
+        applicationId "com.lightstreamer.jms.demo.stock_list_client"
+        minSdkVersion rootProject.ext.targetSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0.0"
+        manifestPlaceholders = [appTheme: "@style/Theme.AppCompat"]
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            //proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    packagingOptions {
+        pickFirst 'build.number'
+        pickFirst 'version.number'
+        pickFirst 'compatibility_version.number'
+        exclude 'META-INF/INDEX.LIST'
+        exclude 'META-INF/io.netty.versions.properties'
+    }
+}
+
+dependencies {
+    implementation "androidx.appcompat:appcompat:1.1.0"
+    implementation 'com.androidplot:androidplot-core:0.6.1'
+    implementation 'com.lightstreamer:ls-jms-android-client:1.0.0-alpha-03'
+
+    // Lifecycle components
+    implementation "androidx.lifecycle:lifecycle-extensions:$rootProject.archLifecycleVersion"
+    annotationProcessor "androidx.lifecycle:lifecycle-compiler:$rootProject.archLifecycleVersion"
+}
