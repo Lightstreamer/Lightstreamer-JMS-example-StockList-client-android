@@ -63,6 +63,15 @@ From the `ANDROID_SDK_ROOT/platform-tools`, launch the `StockListDemoActivity` b
 $ ./adb shell am start -n com.lightstreamer.jms.demo.stocklist_client/.StockListDemoActivity
 ```
 
+The demo uses `ActiveMQ` as the connector name, but you can specify any value as per your requirements by editing the following entry:
+
+```xml
+<string name="connector">ActiveMQ</string>
+```
+
+in the `src\res\values\strings.xml` .
+
+
 ## See Also
 
 ### Lightstreamer JMS Extender Service Needed by This Demo Client
