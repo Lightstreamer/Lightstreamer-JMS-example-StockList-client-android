@@ -22,41 +22,45 @@ an [Android Virtual Device](http://developer.android.com/tools/devices/emulator.
 
 * Launch Lightstreamer JMS Extender.
 
-* Locate or install the [Android SDK](http://developer.android.com/sdk/index.html)
-* Install the `Android_StockListDemo.apk` in your emulator:
-  * Execute the emulator (Android SDK/SDK Manager->Tools->Manage AVDs...->New then Start)
-  * Open the console and move to the platform-tools folder of SDK directory.
-  * Then type the following command:
+* You also need the _Android command line tools_:
+  - [Download](https://developer.android.com/studio#command-tools) the tools package and extract it into `<your_android_sdk_root> cmdline-tools` folder,
+ where `<your_android_sdk_root>` is a folder in your system.
+  - Export the `ANDROID_SDK_ROOT` environment variable:
+    ```sh
+    $ export ANDROID_SDK_ROOT=<your_android_sdk_root>
     ```
-    adb install [.apk path]
+  - From `<your_android_sdk_root>/cmdline-tools/tools/bin`, run the following command and accept all offered SDK package licenses:
+    ```sh
+    $ ./sdkmanager --licenses
+
+* Set up and android device:
+  * Download the system image for the target device:
+     ```
+     $ ./sdkmanager.bat "system-images;android-29;default;x86"
+     ```
+
+  * Create the virtual device:
     ```
-* Look up the demo in your virtual device and launch it.
+    $ avdmanager create avd -n jms_avd -d "pixel_xl" -k "system-images;android-29;default;x86" -d "pixel_xl"
+    ```
+  
+  * Run the emulator from the `ANDROID_SDK_ROOT/emulator` folder:
+    ```
+    $ ./emulator -avd jms_avd
+    ```
+
+  * Build and deploy the app to the emulator
+    ```
+    $ ./gradlew installDist
+    ```
 
 *Note that the demo targets the Lightstreamer server @ http://10.0.2.2:8080 because 10.0.2.2 is the special alias to your host loopback interface.*
 
-## Build
+### Start the Client
 
-### Setup the IDE
-
-Note that you can skip this section and build the application without using any IDE. 
-
-To open the project in [Android Studio](https://developer.android.com/sdk/installing/studio.html), import the provided Gradle project.
-
-### Build
-
-To build your own version of the demo you can launch the provided Gradle script from the command line or from the IDE itself.
-As an example you can build and install a debug version of the application in an emulator (or device) by running
+From the `ANDROID_SDK_ROOT/platform-tools`, launch the following command:
 ```
-avdmanager create avd -n test -k "system-images;android-30;google_apis;x86"
-```
-
-```
-
-emulator -avd test
-```
-
-```
-$ gradlew installDebug
+$ adb shell am start -n com.lightstreamer.jms.demo.stocklist_client/.StockListDemoActivity
 ```
 
 ## See Also
