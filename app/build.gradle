@@ -4,7 +4,7 @@ android {
     compileSdkVersion rootProject.targetSdkVersion
 
     defaultConfig {
-        applicationId "com.lightstreamer.jms.demo.stock_list_client"
+        applicationId "com.lightstreamer.jms.demo.stocklist_client"
         minSdkVersion rootProject.ext.targetSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
@@ -13,7 +13,7 @@ android {
     }
 
     buildTypes {
-        release {
+        debug {
             minifyEnabled false
             //proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
