@@ -41,7 +41,7 @@ an [Android Virtual Device](http://developer.android.com/tools/devices/emulator.
 
   * Create the virtual device:
     ```
-    $ avdmanager create avd -n jms_avd -d "pixel_xl" -k "system-images;android-29;default;x86" -d "pixel_xl"
+    $ ./avdmanager create avd -n jms_avd -d "pixel_xl" -k "system-images;android-29;default;x86" -d "pixel_xl"
     ```
   
   * Run the emulator from the `ANDROID_SDK_ROOT/emulator` folder:
