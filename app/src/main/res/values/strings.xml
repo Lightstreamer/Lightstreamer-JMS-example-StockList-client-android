@@ -7,6 +7,8 @@
 
     <!-- The name of the JMS connector -->
     <string name="connector">ActiveMQ</string>
+
+    <!-- The name of the topic -->
     <string name="topicName">stocksTopic</string>
 
     <!-- RSS orange color -->
