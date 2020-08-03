@@ -33,23 +33,23 @@ an [Android Virtual Device](http://developer.android.com/tools/devices/emulator.
     ```sh
     $ ./sdkmanager --licenses
 
-* Set up and android device:
-  * Download the system image for the target device:
+* Create and start an Android Virtual Device:
+  - Download the system image for the target virtual device:
      ```
      $ ./sdkmanager "system-images;android-29;default;x86"
      ```
 
-  * Create the virtual device:
+  - Create the virtual device:
     ```
     $ ./avdmanager create avd -n jms_avd -d "pixel_xl" -k "system-images;android-29;default;x86" -d "pixel_xl"
     ```
   
-  * Run the emulator from the `ANDROID_SDK_ROOT/emulator` folder:
+  - From the `ANDROID_SDK_ROOT/emulator` folder, run the emulator
     ```
     $ ./emulator -avd jms_avd
     ```
 
-  * Build and deploy the app to the emulator
+  - From the project root, build and deploy the app to the emulator
     ```
     $ ./gradlew installDist
     ```
@@ -58,7 +58,7 @@ an [Android Virtual Device](http://developer.android.com/tools/devices/emulator.
 
 ### Start the Client
 
-From the `ANDROID_SDK_ROOT/platform-tools`, launch the following command:
+From the `ANDROID_SDK_ROOT/platform-tools`, launch the `StockListDemoActivity` by issuing  following command:
 ```
 $ ./adb shell am start -n com.lightstreamer.jms.demo.stocklist_client/.StockListDemoActivity
 ```
