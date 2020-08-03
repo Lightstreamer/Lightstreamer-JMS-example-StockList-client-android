@@ -23,7 +23,7 @@ an [Android Virtual Device](http://developer.android.com/tools/devices/emulator.
 * Launch Lightstreamer JMS Extender.
 
 * You also need the _Android command line tools_:
-  - [Download](https://developer.android.com/studio#command-tools) the tools package and extract it into `<your_android_sdk_root> cmdline-tools` folder,
+  - [Download](https://developer.android.com/studio#command-tools) the tools package and extract it into `<your_android_sdk_root>/cmdline-tools` folder,
  where `<your_android_sdk_root>` is a folder in your system.
   - Export the `ANDROID_SDK_ROOT` environment variable:
     ```sh
