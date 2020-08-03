@@ -36,7 +36,7 @@ an [Android Virtual Device](http://developer.android.com/tools/devices/emulator.
 * Set up and android device:
   * Download the system image for the target device:
      ```
-     $ ./sdkmanager.bat "system-images;android-29;default;x86"
+     $ ./sdkmanager "system-images;android-29;default;x86"
      ```
 
   * Create the virtual device:
@@ -60,7 +60,7 @@ an [Android Virtual Device](http://developer.android.com/tools/devices/emulator.
 
 From the `ANDROID_SDK_ROOT/platform-tools`, launch the following command:
 ```
-$ adb shell am start -n com.lightstreamer.jms.demo.stocklist_client/.StockListDemoActivity
+$ ./adb shell am start -n com.lightstreamer.jms.demo.stocklist_client/.StockListDemoActivity
 ```
 
 ## See Also
