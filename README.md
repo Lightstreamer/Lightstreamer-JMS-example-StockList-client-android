@@ -41,10 +41,7 @@ an [Android Virtual Device](http://developer.android.com/tools/devices/emulator.
     ```
     $ ./avdmanager create avd -n jms_avd -d "pixel_xl" -k "system-images;android-29;default;x86"
     ```
-  
-* Configure the app
-    
- 
+
 * Configure and build app:
   - The demo uses `ActiveMQ` as the connector name, but you can specify any value as per your requirements by editing the following entry im the `src/res/values/strings.xml` resource file:
     ```xml
