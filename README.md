@@ -3,7 +3,7 @@
 This project contains a full example of an Android application that shows how the [_Lightstreamer JMS Extender Java Client Library_](https://github.com/Lightstreamer/JMSExtender-lib-client-java) can be used to connect to Lightstreamer JMS Extender.  
 The project is the Android version of the [Lightstreamer JMS Extender - Basic Stock-List Demo - Java SE Client](https://github.com/Lightstreamer/Lightstreamer-JMS-example-StockList-client-java).
 
-![Screenshot](screen_android_large.png)
+![Screenshot](screen-android-large.png)
 
 ## Details
 
